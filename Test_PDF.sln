@@ -1,0 +1,56 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "plugins", "plugins", "{07D57EEB-2F50-60C4-C011-FE4FA775C9A8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "node_modules", "node_modules", "{4F323C00-2DAB-898A-CB37-BBC8B5F74E19}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "phonegap-plugin-barcodescanner", "phonegap-plugin-barcodescanner", "{81E0F3D2-D800-AF72-321C-958B3D23D152}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{5ED8339B-3F44-3487-45E9-5E72637A188F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows", "windows", "{49AB790B-E80F-BED4-AAF2-EC527E0E81ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinRTBarcodeReader", "plugins\phonegap-plugin-barcodescanner\src\windows\lib\WinRTBarcodeReader.csproj", "{78E5A97D-9CE5-FECC-F15A-B6B702749908}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "phonegap-plugin-barcodescanner", "phonegap-plugin-barcodescanner", "{B5DE3DE3-BA18-A6F5-38C4-050319BB72DD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{3324D208-6C47-41D7-C54A-4E2A7765B198}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows", "windows", "{51AB7D2B-1249-62C6-DDDF-8363FD7D6520}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinRTBarcodeReader", "node_modules\phonegap-plugin-barcodescanner\src\windows\lib\WinRTBarcodeReader.csproj", "{2F99EDA9-7975-936C-9B80-7BC9A430F969}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{78E5A97D-9CE5-FECC-F15A-B6B702749908}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78E5A97D-9CE5-FECC-F15A-B6B702749908}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78E5A97D-9CE5-FECC-F15A-B6B702749908}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78E5A97D-9CE5-FECC-F15A-B6B702749908}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F99EDA9-7975-936C-9B80-7BC9A430F969}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F99EDA9-7975-936C-9B80-7BC9A430F969}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F99EDA9-7975-936C-9B80-7BC9A430F969}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F99EDA9-7975-936C-9B80-7BC9A430F969}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{81E0F3D2-D800-AF72-321C-958B3D23D152} = {07D57EEB-2F50-60C4-C011-FE4FA775C9A8}
+		{5ED8339B-3F44-3487-45E9-5E72637A188F} = {81E0F3D2-D800-AF72-321C-958B3D23D152}
+		{49AB790B-E80F-BED4-AAF2-EC527E0E81ED} = {5ED8339B-3F44-3487-45E9-5E72637A188F}
+		{78E5A97D-9CE5-FECC-F15A-B6B702749908} = {49AB790B-E80F-BED4-AAF2-EC527E0E81ED}
+		{B5DE3DE3-BA18-A6F5-38C4-050319BB72DD} = {4F323C00-2DAB-898A-CB37-BBC8B5F74E19}
+		{3324D208-6C47-41D7-C54A-4E2A7765B198} = {B5DE3DE3-BA18-A6F5-38C4-050319BB72DD}
+		{51AB7D2B-1249-62C6-DDDF-8363FD7D6520} = {3324D208-6C47-41D7-C54A-4E2A7765B198}
+		{2F99EDA9-7975-936C-9B80-7BC9A430F969} = {51AB7D2B-1249-62C6-DDDF-8363FD7D6520}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {07E012A2-3C09-4C01-9676-F88A226F6232}
+	EndGlobalSection
+EndGlobal

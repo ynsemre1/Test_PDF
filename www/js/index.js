@@ -5,7 +5,7 @@ function onDeviceReady() {
 
     var captureButton = document.getElementById('capturePhoto');
     var scanBarcodeButton = document.getElementById('scanBarcode');
-    var pdfButton = document.getElementById('pdfOpener');
+    var pdfButton = document.getElementById('pdfOpener'); // ✅ PDF butonu
 
     if (!captureButton || !scanBarcodeButton || !pdfButton) {
         console.error("❌ ERROR: HTML buttons not found!");
@@ -31,30 +31,79 @@ function onDeviceReady() {
         cordova.plugins.barcodeScanner.scan(onQrSuccess, onQrFail);
     });
 
+    // 📌 PDF Açma veya İndirme
+    pdfButton.addEventListener("click", function () {
+        var filePath = cordova.file.dataDirectory + "ornekpdf.pdf"; // 📂 Uygulama dizinine kaydet
+
+        checkIfFileExists(filePath, function (exists) {
+            if (exists) {
+                // ✅ Dosya zaten varsa direkt aç
+                console.log("📂 PDF dosyası bulundu, açılıyor...");
+                openPDF(filePath);
+            } else {
+                // 🌍 Dosya yoksa indir
+                console.log("📥 PDF bulunamadı, indirme başlatılıyor...");
+                downloadPDF();
+            }
+        });
+    });
+
     console.log("🎯 Tüm butonlar aktif hale getirildi.");
 }
 
 /**
-     * @summary Opens a PDF file using the file opener plugin.
-     */
-pdfReaderButton.addEventListener("click", function () {
-    var filePath = "/storage/emulated/0/Android/data/com.example.testcase/files/ornekpdf.pdf";
-    console.log("Opening PDF...");
+ * 📥 Web'den PDF indir ve UYGULAMA DİZİNİNE kaydet
+ */
+function downloadPDF() {
+    var fileTransfer = new FileTransfer();
+    var uri = encodeURI("https://www.odgyapi.com/upload/urunler/unique-tower-139460.pdf"); // 🌍 Web'deki PDF dosyası
+    var fileURL = cordova.file.dataDirectory + "ornekpdf.pdf"; // 📂 Uygulama dizinine kaydet
+
+    fileTransfer.download(uri, fileURL, function (entry) {
+        console.log("✅ PDF başarıyla indirildi: " + entry.toURL());
+        alert("📄 PDF başarıyla indirildi!");
+
+        // ✅ İndirilen PDF'yi aç
+        openPDF(entry.toURL());
+    }, function (error) {
+        console.log("❌ PDF indirme hatası:", JSON.stringify(error));
+        alert("❌ PDF indirilemedi: " + JSON.stringify(error));
+    }, false);
+}
+
+/**
+ * 📖 PDF Açma İşlemi
+ */
+function openPDF(filePath) {
     cordova.plugins.fileOpener2.open(
         filePath,
         "application/pdf",
         {
             error: function (e) {
-                console.log("PDF Open Error:", JSON.stringify(e));
-                alert("❌ PDF Açılırken Bir Hata Oluştu: " + JSON.stringify(e));
+                console.log("❌ PDF Açma Hatası:", JSON.stringify(e));
+                alert("❌ PDF açılamadı: " + JSON.stringify(e));
             },
             success: function () {
-                console.log("PDF Opened Successfully");
+                console.log("✅ PDF başarıyla açıldı");
             }
         }
     );
-});
+}
 
+/**
+ * 📂 Belirtilen dosyanın var olup olmadığını kontrol eder
+ */
+function checkIfFileExists(filePath, callback) {
+    window.resolveLocalFileSystemURL(filePath, function () {
+        callback(true); // ✅ Dosya var
+        alert("pdf var");
+    }, function () {
+        callback(false); // ❌ Dosya yok
+        alert("pdf yok");
+    });
+}
+
+// 📌 QR Kod Tarama Başarı & Hata Fonksiyonları
 function onQrSuccess(result) {
     if (result.cancelled) {
         console.log("🔕 Kullanıcı QR taramayı iptal etti.");
@@ -71,6 +120,7 @@ function onQrFail(error) {
     alert("🚫 QR kod tarama başarısız: " + error);
 }
 
+// 📌 Kamera Fotoğraf Çekme İşlevi
 function onSuccess(imageData) {
     showLoading(false);
 
@@ -92,6 +142,7 @@ function onFail(message) {
     alert("🚫 İşlem başarısız! " + message);
 }
 
+// 📌 Yükleniyor göstergesini kontrol etme
 function showLoading(show) {
     var loadingIndicator = document.getElementById("loadingIndicator");
     if (loadingIndicator) {
