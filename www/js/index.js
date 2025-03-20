@@ -9,8 +9,9 @@ function onDeviceReady() {
     var captureButton = document.getElementById('capturePhoto');
     var scanBarcodeButton = document.getElementById('scanBarcode');
     var pdfButton = document.getElementById('pdfOpener');
+    var alertButton = document.getElementById('alertButton');
 
-    if (!captureButton || !scanBarcodeButton) {
+    if (!captureButton || !scanBarcodeButton || !pdfButton) {
         console.error("❌ ERROR: HTML buttons not found!");
         return;
     }
@@ -59,29 +60,30 @@ function onDeviceReady() {
         );
     });
 
+    pdfButton.addEventListener("click", function(){
+        console.log("Pdf Openeninngggg")
+        var pdfURL = "https://www.spo.org.tr/resimler/ekler/9a7431dec1c6c33_ek.pdf";
+        var ref = window.open(pdfURL, '_system', 'location=no,toolbar=no,zoom=yes');
+    }, false);
+
+    alertButton.addEventListener("click", function(){
+        console.log("PDF Event Başladı");
+        navigator.notification.confirm(
+            'Bu işlemi onaylıyor musunuz?',
+            function(buttonIndex){
+                if(buttonIndex === 1){
+                    console.log("Eet Seçildi");
+                }else{
+                    console.log("Hayır Seçildi");
+                }
+            },
+            'Onay Gerekli',
+            ['Evet','Hayır']
+        )
+    });
+
     console.log("🎯 Tüm butonlar aktif hale getirildi.");
 }
-
-/**
-     * @summary Opens a PDF file using the file opener plugin.
-     */
-pdfReaderButton.addEventListener("click", function () {
-    var filePath = "/storage/emulated/0/Android/data/com.example.testcase/files/ornekpdf.pdf";
-    console.log("Opening PDF...");
-    cordova.plugins.fileOpener2.open(
-        filePath,
-        "application/pdf",
-        {
-            error: function (e) {
-                console.log("PDF Open Error:", JSON.stringify(e));
-                alert("❌ PDF Açılırken Bir Hata Oluştu: " + JSON.stringify(e));
-            },
-            success: function () {
-                console.log("PDF Opened Successfully");
-            }
-        }
-    );
-});
 
 function onQrSuccess(result) {
     if (result.cancelled) {
