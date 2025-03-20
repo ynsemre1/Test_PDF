@@ -8,4 +8,8 @@
     <content src="index.html" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
+    <preference name="StatusBarOverlaysWebView" value="true"/>
+    <preference name="StatusBarBackgroundColor" value="#0000FF"/>
+    <preference name="StatusBarStyle" value="lightcontent"/>
+    <preference name="StatusBarDefaultScrollTop" value="false"/>
 </widget>

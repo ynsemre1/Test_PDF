@@ -15,6 +15,18 @@
             {
               "xml": "<feature name=\"BarcodeScanner\"><param name=\"android-package\" value=\"com.phonegap.plugins.barcodescanner.BarcodeScanner\" /></feature>",
               "count": 1
+            },
+            {
+              "xml": "<feature name=\"StatusBar\"><param name=\"android-package\" value=\"org.apache.cordova.statusbar.StatusBar\" /><param name=\"onload\" value=\"true\" /></feature>",
+              "count": 1
+            },
+            {
+              "xml": "<preference name=\"StatusBarOverlaysWebView\" value=\"true\" />",
+              "count": 1
+            },
+            {
+              "xml": "<feature name=\"Device\"><param name=\"android-package\" value=\"org.apache.cordova.device.Device\" /></feature>",
+              "count": 1
             }
           ]
         }
@@ -24,6 +36,14 @@
           "application": [
             {
               "xml": "<provider android:authorities=\"${applicationId}.cordova.plugin.camera.provider\" android:exported=\"false\" android:grantUriPermissions=\"true\" android:name=\"org.apache.cordova.camera.FileProvider\"><meta-data android:name=\"android.support.FILE_PROVIDER_PATHS\" android:resource=\"@xml/camera_provider_paths\" /></provider>",
+              "count": 1
+            },
+            {
+              "xml": "<activity android:clearTaskOnLaunch=\"true\" android:configChanges=\"orientation|keyboardHidden|screenSize\" android:exported=\"false\" android:name=\"com.google.zxing.client.android.CaptureActivity\" android:theme=\"@android:style/Theme.NoTitleBar.Fullscreen\" android:windowSoftInputMode=\"stateAlwaysHidden\" />",
+              "count": 1
+            },
+            {
+              "xml": "<activity android:label=\"Share\" android:name=\"com.google.zxing.client.android.encode.EncodeActivity\" />",
               "count": 1
             }
           ],
@@ -45,27 +65,19 @@
               "count": 1
             }
           ],
-          "/manifest/application": [
-            {
-              "xml": "<activity android:clearTaskOnLaunch=\"true\" android:configChanges=\"orientation|keyboardHidden|screenSize\" android:exported=\"false\" android:name=\"com.google.zxing.client.android.CaptureActivity\" android:theme=\"@android:style/Theme.NoTitleBar.Fullscreen\" android:windowSoftInputMode=\"stateAlwaysHidden\" />",
-              "count": 1
-            },
-            {
-              "xml": "<activity android:label=\"Share\" android:name=\"com.google.zxing.client.android.encode.EncodeActivity\" />",
-              "count": 1
-            }
-          ],
-          "/manifest": [
+          "/manifest/application": [],
+          "/manifest": [],
+          "/*": [
             {
               "xml": "<uses-permission android:name=\"android.permission.CAMERA\" />",
               "count": 1
             },
             {
-              "xml": "<uses-permission android:name=\"android.permission.FLASHLIGHT\" />",
+              "xml": "<uses-feature android:name=\"android.hardware.camera\" android:required=\"false\" />",
               "count": 1
             },
             {
-              "xml": "<uses-feature android:name=\"android.hardware.camera\" android:required=\"true\" />",
+              "xml": "<uses-feature android:name=\"android.hardware.camera.autofocus\" android:required=\"false\" />",
               "count": 1
             }
           ]
@@ -78,8 +90,14 @@
       "ANDROIDX_CORE_VERSION": "1.6.+",
       "PACKAGE_NAME": "io.cordova.hellocordova"
     },
-    "phonegap-plugin-barcodescanner": {
-      "ANDROID_SUPPORT_V4_VERSION": "27.+",
+    "@red-mobile/cordova-plugin-barcodescanner": {
+      "ANDROIDX_LEGACY_SUPPORT_V4_VERSION": "1.0.0",
+      "PACKAGE_NAME": "io.cordova.hellocordova"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "io.cordova.hellocordova"
+    },
+    "cordova-plugin-device": {
       "PACKAGE_NAME": "io.cordova.hellocordova"
     }
   },
@@ -118,16 +136,34 @@
       ]
     },
     {
-      "id": "phonegap-plugin-barcodescanner.BarcodeScanner",
-      "file": "plugins/phonegap-plugin-barcodescanner/www/barcodescanner.js",
-      "pluginId": "phonegap-plugin-barcodescanner",
+      "id": "@red-mobile/cordova-plugin-barcodescanner.BarcodeScanner",
+      "file": "plugins/@red-mobile/cordova-plugin-barcodescanner/www/barcodescanner.js",
+      "pluginId": "@red-mobile/cordova-plugin-barcodescanner",
       "clobbers": [
         "cordova.plugins.barcodeScanner"
+      ]
+    },
+    {
+      "id": "cordova-plugin-statusbar.statusbar",
+      "file": "plugins/cordova-plugin-statusbar/www/statusbar.js",
+      "pluginId": "cordova-plugin-statusbar",
+      "clobbers": [
+        "window.StatusBar"
+      ]
+    },
+    {
+      "id": "cordova-plugin-device.device",
+      "file": "plugins/cordova-plugin-device/www/device.js",
+      "pluginId": "cordova-plugin-device",
+      "clobbers": [
+        "device"
       ]
     }
   ],
   "plugin_metadata": {
     "cordova-plugin-camera": "8.0.0",
-    "phonegap-plugin-barcodescanner": "8.1.0"
+    "@red-mobile/cordova-plugin-barcodescanner": "9.0.8",
+    "cordova-plugin-statusbar": "4.0.0",
+    "cordova-plugin-device": "3.0.0"
   }
 }

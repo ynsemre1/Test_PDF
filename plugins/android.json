@@ -11,8 +11,14 @@
       "ANDROIDX_CORE_VERSION": "1.6.+",
       "PACKAGE_NAME": "io.cordova.hellocordova"
     },
-    "phonegap-plugin-barcodescanner": {
-      "ANDROID_SUPPORT_V4_VERSION": "27.+",
+    "@red-mobile/cordova-plugin-barcodescanner": {
+      "ANDROIDX_LEGACY_SUPPORT_V4_VERSION": "1.0.0",
+      "PACKAGE_NAME": "io.cordova.hellocordova"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "io.cordova.hellocordova"
+    },
+    "cordova-plugin-device": {
       "PACKAGE_NAME": "io.cordova.hellocordova"
     }
   },

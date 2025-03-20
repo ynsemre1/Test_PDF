@@ -33,16 +33,34 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
       ]
     },
     {
-      "id": "phonegap-plugin-barcodescanner.BarcodeScanner",
-      "file": "plugins/phonegap-plugin-barcodescanner/www/barcodescanner.js",
-      "pluginId": "phonegap-plugin-barcodescanner",
+      "id": "@red-mobile/cordova-plugin-barcodescanner.BarcodeScanner",
+      "file": "plugins/@red-mobile/cordova-plugin-barcodescanner/www/barcodescanner.js",
+      "pluginId": "@red-mobile/cordova-plugin-barcodescanner",
       "clobbers": [
         "cordova.plugins.barcodeScanner"
+      ]
+    },
+    {
+      "id": "cordova-plugin-statusbar.statusbar",
+      "file": "plugins/cordova-plugin-statusbar/www/statusbar.js",
+      "pluginId": "cordova-plugin-statusbar",
+      "clobbers": [
+        "window.StatusBar"
+      ]
+    },
+    {
+      "id": "cordova-plugin-device.device",
+      "file": "plugins/cordova-plugin-device/www/device.js",
+      "pluginId": "cordova-plugin-device",
+      "clobbers": [
+        "device"
       ]
     }
   ];
   module.exports.metadata = {
     "cordova-plugin-camera": "8.0.0",
-    "phonegap-plugin-barcodescanner": "8.1.0"
+    "@red-mobile/cordova-plugin-barcodescanner": "9.0.8",
+    "cordova-plugin-statusbar": "4.0.0",
+    "cordova-plugin-device": "3.0.0"
   };
 });
