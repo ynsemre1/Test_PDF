@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <title>Mobile App</title>
+
+    <!-- 📌 Cordova and Application JavaScript Files -->
+    <script src="cordova.js"></script>
+    <script src="js/index.js"></script>
+
+    <!-- 📌 Application CSS File -->
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+    <!-- 📌 Main Content Area -->
+    <div id="content">
+        <h1>
+            <!-- 📌 Application Title Instead of Logo -->
+            <span class="app-title">-- K Test --</span>
+        </h1>
+        <p>İşlem Seçiniz...</p>
+
+        <!-- 📌 Selected Photo Display -->
+        <img id="myImage" alt="Selected Photo" style="display:none;">
+
+        <!-- 📌 Loading Indicator -->
+        <p id="loadingIndicator" class="spinner"></p>
+    </div>
+
+    <!-- 📌 Bottom Navigation Menu -->
+    <nav class="bottom-nav">
+        <button id="capturePhoto"><i class="fas fa-camera"></i> <span>Photo</span></button>
+        <button id="scanBarcode"><i class="fas fa-qrcode"></i> <span>QR</span></button>
+        <button id="alertButton"><i class="fas fa-check"></i> <span>Alert</span></button>
+        <button id="pdfOpener"><i class="fas fa-file"></i> <span>PDF</span></button>
+    </nav>
+</body>
+</html>

@@ -1,0 +1,62 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "plugins", "plugins", "{07D57EEB-2F50-60C4-C011-FE4FA775C9A8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "node_modules", "node_modules", "{4F323C00-2DAB-898A-CB37-BBC8B5F74E19}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "@red-mobile", "@red-mobile", "{46C03BFE-C2F0-DC75-F52C-DBCC340EF433}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "cordova-plugin-barcodescanner", "cordova-plugin-barcodescanner", "{360B9B8A-FAEB-B60F-7A7F-8D05D9F02F8C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{386040D8-2542-0C75-938B-A65F5458138B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows", "windows", "{538CF668-943E-EC63-AACB-902BC6463162}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinRTBarcodeReader", "plugins\@red-mobile\cordova-plugin-barcodescanner\src\windows\lib\WinRTBarcodeReader.csproj", "{C6B4E2DB-8DC1-E463-58D8-E8C74BE33ED9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "@red-mobile", "@red-mobile", "{100E8AD0-FCF3-188D-502C-7874CD2C16E5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "cordova-plugin-barcodescanner", "cordova-plugin-barcodescanner", "{A252FA91-5E07-A25B-DEAC-CB8C2276628C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{13E70D21-9FEF-21A6-3C8A-29C233BE09F5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows", "windows", "{555DFB51-BC4B-4CA4-5001-4210B5EE5230}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinRTBarcodeReader", "node_modules\@red-mobile\cordova-plugin-barcodescanner\src\windows\lib\WinRTBarcodeReader.csproj", "{92C6A3A5-C101-2293-077D-640D311D5195}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C6B4E2DB-8DC1-E463-58D8-E8C74BE33ED9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6B4E2DB-8DC1-E463-58D8-E8C74BE33ED9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6B4E2DB-8DC1-E463-58D8-E8C74BE33ED9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6B4E2DB-8DC1-E463-58D8-E8C74BE33ED9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92C6A3A5-C101-2293-077D-640D311D5195}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92C6A3A5-C101-2293-077D-640D311D5195}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92C6A3A5-C101-2293-077D-640D311D5195}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92C6A3A5-C101-2293-077D-640D311D5195}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{46C03BFE-C2F0-DC75-F52C-DBCC340EF433} = {07D57EEB-2F50-60C4-C011-FE4FA775C9A8}
+		{360B9B8A-FAEB-B60F-7A7F-8D05D9F02F8C} = {46C03BFE-C2F0-DC75-F52C-DBCC340EF433}
+		{386040D8-2542-0C75-938B-A65F5458138B} = {360B9B8A-FAEB-B60F-7A7F-8D05D9F02F8C}
+		{538CF668-943E-EC63-AACB-902BC6463162} = {386040D8-2542-0C75-938B-A65F5458138B}
+		{C6B4E2DB-8DC1-E463-58D8-E8C74BE33ED9} = {538CF668-943E-EC63-AACB-902BC6463162}
+		{100E8AD0-FCF3-188D-502C-7874CD2C16E5} = {4F323C00-2DAB-898A-CB37-BBC8B5F74E19}
+		{A252FA91-5E07-A25B-DEAC-CB8C2276628C} = {100E8AD0-FCF3-188D-502C-7874CD2C16E5}
+		{13E70D21-9FEF-21A6-3C8A-29C233BE09F5} = {A252FA91-5E07-A25B-DEAC-CB8C2276628C}
+		{555DFB51-BC4B-4CA4-5001-4210B5EE5230} = {13E70D21-9FEF-21A6-3C8A-29C233BE09F5}
+		{92C6A3A5-C101-2293-077D-640D311D5195} = {555DFB51-BC4B-4CA4-5001-4210B5EE5230}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {325214CE-A249-49CE-BD16-42A3779DAAFD}
+	EndGlobalSection
+EndGlobal
